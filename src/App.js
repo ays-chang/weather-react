@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Hello from App.js in weather-react (Dropbox)</h1>
-        <Weather />
+        <Weather city="Hawaii" />
       </header>
     </div>
   );
