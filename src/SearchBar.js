@@ -7,7 +7,7 @@ export default function SearchBar() {
   return (
     <div className="search-bar">
       <form className="row row-cols-auto g-1 align-items-end">
-        <div className="col logo">
+        <div className="col-3 logo">
           <img src={Logo} alt="weather-logo" width="100px" />
         </div>
         <div className="col-6">
