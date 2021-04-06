@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../images/weather-logo.png";
+import Logo from "./images/weather-logo.png";
 
 import "./SearchBar.css";
 
