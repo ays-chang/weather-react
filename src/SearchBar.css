@@ -1,0 +1,28 @@
+button {
+  padding: 5.5px 8px;
+  background: #00bff3;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.search-bar {
+  margin: 0px auto;
+}
+
+.logo {
+  margin: 0px;
+}
+
+.fa-search {
+  font-size: 25px;
+  color: #fff;
+  padding: 6px 3px;
+}
+
+.fa-map-marker-alt {
+  font-size: 25px;
+  color: #fff;
+  padding: 6px 6px;
+}

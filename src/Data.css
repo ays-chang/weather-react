@@ -1,0 +1,24 @@
+.data {
+  margin: 20px 0px 0px 0px;
+}
+
+.weather-icon {
+  height: 96px;
+  width: 96px;
+  float: left;
+}
+
+.temperature {
+  color: #000;
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.units {
+  position: relative;
+  top: -34px;
+}
+
+ul.details {
+  margin-top: 20px;
+}

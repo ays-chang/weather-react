@@ -1,17 +1,21 @@
-import React from "react";
-import Weather from "./Weather.js";
+import SearchBar from "./SearchBar";
+import Data from "./Data";
+import Forecast from "./Forecast";
+import Footer from "./Footer";
 
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello from App.js in weather-react (Dropbox)</h1>
-        <Weather city="Hawaii" />
-      </header>
+    <div>
+      <div className="weather-app">
+        <SearchBar />
+        <Data />
+        <Forecast />
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
-
-export default App;

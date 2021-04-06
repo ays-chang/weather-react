@@ -1,0 +1,10 @@
+.forecast-day {
+  color: #c4c4c4;
+}
+
+.forecast-icon {
+  width: 50px;
+  padding: 0px;
+  display: block;
+  margin: auto;
+}
