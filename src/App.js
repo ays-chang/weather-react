@@ -1,5 +1,6 @@
+import React from "react";
 import SearchBar from "./SearchBar";
-import Data from "./Data";
+import Weather from "./Weather";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 
@@ -10,7 +11,7 @@ export default function App() {
     <div>
       <div className="weather-app">
         <SearchBar />
-        <Data />
+        <Weather />
         <Forecast />
       </div>
       <div>
