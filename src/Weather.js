@@ -3,23 +3,24 @@ import axios from "axios";
 
 import "./Weather.css";
 
-export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState(null);
+export default function Weather(prop) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
+      ready: true,
       city: response.data.name,
+      date: "Tuesday 07:00",
+      description: response.data.weather[0].description,
+      iconURL: "http://openweathermap.org/img/wn/50d@2x.png",
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
     });
-
-    setReady(true);
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="data">
         <div className="row">
@@ -28,18 +29,18 @@ export default function Weather() {
           </h1>
           <ul>
             <li>
-              <span>5:00pm</span>
+              <span>{weatherData.date}</span>
             </li>
             <li>
-              <span>Sunny</span>
+              <span className="text-capitalize">{weatherData.description}</span>
             </li>
           </ul>
         </div>
         <div className="row">
           <div className="col-6">
             <img
-              src="http://openweathermap.org/img/wn/50d@2x.png"
-              alt="weather"
+              src={weatherData.iconURL}
+              alt={weatherData.description}
               className="weather-icon"
             />
             <span className="temperature">
@@ -60,8 +61,7 @@ export default function Weather() {
     );
   } else {
     let apiKey = "3cac463b3ab814b10debb07d348f5595";
-    let city = "New York";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${prop.defaultCity}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";
