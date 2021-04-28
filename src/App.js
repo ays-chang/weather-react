@@ -10,8 +10,8 @@ export default function App() {
   return (
     <div>
       <div className="weather-app">
-        <SearchBar />
-        <Weather defaultCity="Taipei" />
+        <SearchBar defaultCity="Taipei" />
+        <Weather data={weatherData} />
         <Forecast />
       </div>
       <div>
