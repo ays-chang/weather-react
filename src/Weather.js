@@ -5,7 +5,7 @@ import "./Weather.css";
 
 export default function Weather(props) {
   return (
-    <div className="Weather">
+    <div className="weather-data">
       <div className="row">
         <h1>{props.data.city}</h1>
         <ul>

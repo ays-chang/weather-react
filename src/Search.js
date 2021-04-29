@@ -3,9 +3,9 @@ import Weather from "./Weather";
 import axios from "axios";
 import Logo from "./images/weather-logo.png";
 
-import "./SearchBar.css";
+import "./Search.css";
 
-export default function SearchBar(props) {
+export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
@@ -64,6 +64,7 @@ export default function SearchBar(props) {
             </button>
           </div>
         </form>
+        <Weather data={weatherData} />
       </div>
     );
   } else {

@@ -1,6 +1,5 @@
 import React from "react";
-import SearchBar from "./SearchBar";
-import Weather from "./Weather";
+import Search from "./Search";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 
@@ -10,8 +9,7 @@ export default function App() {
   return (
     <div>
       <div className="weather-app">
-        <SearchBar defaultCity="Taipei" />
-        <Weather data={weatherData} />
+        <Search defaultCity="Taipei" />
         <Forecast />
       </div>
       <div>
