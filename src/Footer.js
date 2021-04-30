@@ -12,7 +12,10 @@ export default function Footer() {
       >
         Open-source code
       </a>{" "}
-      by Alice Chang
+      by{" "}
+      <a href="https://creativealice.com" rel="noreferrer" target="_blank">
+        Alice Chang
+      </a>
     </div>
   );
 }
