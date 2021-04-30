@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import Temperature from "./Temperature";
 
 import "./Weather.css";
 
@@ -24,12 +25,7 @@ export default function Weather(props) {
             alt={props.data.description}
             className="weather-icon"
           />
-          <span className="temperature">
-            {Math.round(props.data.temperature)}
-          </span>
-          <span className="units">
-            <a href="/">°C</a> | <a href="/">°F</a>
-          </span>
+          <Temperature metric={props.data.temperature} />
         </div>
         <div className="col-6">
           <ul className="details">
