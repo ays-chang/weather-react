@@ -1,10 +1,18 @@
-.forecast-day {
+.Forecast {
+  text-align: center;
+  font-size: 15px;
+}
+
+.Forecast-day {
   color: #c4c4c4;
 }
 
-.forecast-icon {
-  width: 50px;
+.Forecast-icon {
   padding: 0px;
   display: block;
   margin: auto;
+}
+
+.Forecast-temp-min {
+  opacity: 0.6;
 }

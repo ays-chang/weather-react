@@ -10,7 +10,6 @@ export default function App() {
     <div>
       <div className="weather-app">
         <Search defaultCity="Taipei" />
-        <Forecast />
       </div>
       <div>
         <Footer />
