@@ -15,6 +15,7 @@ export default function Search(props) {
     setWeatherData({
       ready: true,
       city: response.data.name,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       iconURL: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
@@ -67,7 +68,7 @@ export default function Search(props) {
           </div>
         </form>
         <Weather data={weatherData} />
-        <Forecast />
+        <Forecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
