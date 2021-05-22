@@ -10,6 +10,7 @@ import "./Search.css";
 export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [position, setPosition] = useState({ ready: false });
 
   function handleResponse(response) {
     setWeatherData({
@@ -40,6 +41,25 @@ export default function Search(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
+  function showPosition(position) {
+    setPosition({
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude,
+    });
+  }
+
+  function getCurrentPosition() {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+
+  function geosearch() {
+    let apiKey = "3cac463b3ab814b10debb07d348f5595";
+    let longitude = props.coordinates.lon;
+    let latitude = props.coordinates.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lon=${longitude}$lat=${latitude}&appid=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="search-bar">
@@ -59,7 +79,7 @@ export default function Search(props) {
             />
           </div>
           <div className="col">
-            <button type="submit" value="Search">
+            <button type="submit">
               <i className="fa fa-search"></i>
             </button>
             <button type="submit">

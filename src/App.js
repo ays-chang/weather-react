@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div>
       <div className="weather-app">
-        <Search defaultCity="Taipei" />
+        <Search defaultCity="Coquitlam" />
       </div>
       <div>
         <Footer />
