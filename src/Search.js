@@ -10,7 +10,6 @@ import "./Search.css";
 export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  const [position, setPosition] = useState({ ready: false });
 
   function handleResponse(response) {
     setWeatherData({
@@ -42,22 +41,14 @@ export default function Search(props) {
   }
 
   function showPosition(position) {
-    setPosition({
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude,
-    });
-  }
-
-  function getCurrentPosition() {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  }
-
-  function geosearch() {
     let apiKey = "3cac463b3ab814b10debb07d348f5595";
-    let longitude = props.coordinates.lon;
-    let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lon=${longitude}$lat=${latitude}&appid=${apiKey}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
+  }
+
+  function getCurrentPosition(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(showPosition);
   }
 
   if (weatherData.ready) {
@@ -82,7 +73,7 @@ export default function Search(props) {
             <button type="submit">
               <i className="fa fa-search"></i>
             </button>
-            <button type="submit">
+            <button type="button" onClick={getCurrentPosition}>
               <i className="fas fa-map-marker-alt"></i>
             </button>
           </div>
